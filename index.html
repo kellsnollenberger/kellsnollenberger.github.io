@@ -3,112 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kells Nollenberger – Musician · Creative · Vintner</title>
+  <title>Kells Nollenberger · Jazz Bassist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet" />
   <style>
-    /* -------  basic reset & typography  ------- */
+    /* —— GLOBAL —— */
+    :root {
+      --accent: #ffbf00;
+      --bg-dark: #0d0d0d;
+      --bg-light: #1a1a1a;
+      --text-light: #fafafa;
+      --text-dim: #a6a6a6;
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#222;background:#fafafa}
-    a{color:#1d4ed8;text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* ------- layout helpers ------- */
-    .container{width:90%;max-width:900px;margin:0 auto;padding:3rem 0}
-    header,footer{text-align:center;padding:3rem 0}
-    nav ul{list-style:none;display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;font-weight:600}
-
-    /* hero */
-    .hero{background:#eceff1;padding:4rem 0 5rem;border-bottom:4px solid #222}
-    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:0.5rem}
-    .hero p{font-size:1.25rem;max-width:40ch;margin:0 auto}
-
-    /* sections */
-    section{padding:4rem 0}
-    section h2{font-size:2rem;margin-bottom:1rem;text-align:center}
-    .about p{max-width:65ch;margin:0 auto 1rem}
-
-    /* gallery grid */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
-    .gallery img{width:100%;height:280px;object-fit:cover;border-radius:0.5rem;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
-
-    /* contact */
-    .contact ul{list-style:none;margin-top:1rem}
-    .contact li{margin:0.5rem 0}
-
-    footer{font-size:0.9rem;color:#555;border-top:1px solid #ddd}
+    body{font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none;}
+    img{max-width:100%;height:auto;border-radius:0.5rem}
+    section{padding:4rem 1rem;max-width:1200px;margin:auto}
+    h1,h2,h3{font-weight:900;letter-spacing:-.02em}
+    h2{margin-bottom:1rem;font-size:2rem}
+    /* —— HERO —— */
+    .hero{display:flex;align-items:center;justify-content:center;min-height:90vh;background:url('img/hero.jpg') center/cover no-repeat;position:relative;text-align:center}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+    .hero-content{position:relative;z-index:1;}
+    .hero h1{font-size:clamp(2.5rem,6vw,5rem)}
+    .hero p{font-size:clamp(1rem,2vw,1.5rem);margin-top:1rem;color:var(--text-dim)}
+    .social{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+    .social a{font-size:1.5rem}
+    /* —— ABOUT —— */
+    .about{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .about img{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    /* —— GIGS —— */
+    .gigs-list{list-style:none;margin-top:1.5rem}
+    .gig{padding:1rem;border-left:4px solid var(--accent);margin-bottom:1rem;background:var(--bg-light);border-radius:0 0.5rem 0.5rem 0}
+    .gig-date{font-weight:600}
+    /* —— CONTACT —— */
+    .contact-card{background:var(--bg-light);padding:2rem;border-radius:0.75rem;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.4)}
   </style>
 </head>
 <body>
-  <!-- ===== HERO ===== -->
+
+  <!-- HERO -->
   <header class="hero">
-    <h1>Kells Nollenberger</h1>
-    <p>Jazz bassist · Creative director · Brooklyn vintner</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#gallery">Photos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="hero-content">
+      <h1>Kells Nollenberger</h1>
+      <p>Jazz Bassist · Composer · Educator</p>
+      <div class="social">
+        <a href="https://instagram.com/yourhandle" aria-label="Instagram">📸</a>
+        <a href="https://youtube.com/yourchannel" aria-label="YouTube">▶️</a>
+        <a href="mailto:kells.nollenberger@gmail.com" aria-label="Email">✉️</a>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>
-        I grew up on the shores of Lake Superior in Duluth, MN, cut my teeth on
-        Oscar Peterson records, and now split my time between laying down
-        upright bass lines across New York City and running a small urban
-        winery. Over the past decade I’ve toured with everyone from
-        bluegrass icon Jeff Austin to the international cast of <em>West Side
-        Story</em>, while keeping a weekly residency with my trio <strong>Polite
-        Company</strong> at the Beekman Hotel.
-      </p>
-      <p>
-        When I’m not on stage you’ll find me designing batch cocktails,
-        experimenting with bitter amari, or navigating the wild world of NYC
-        HDFC co‑ops. Life tastes best when art, hospitality, and community all
-        pour from the same bottle.
-      </p>
-    </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <p>Kells Nollenberger is a Brooklyn‑based bassist celebrated for combining the rhythmic drive of jazz with the
+        melodic sensitivity of chamber music. He has performed with the Stephane Wrembel Band, toured globally with the
+        international production of <em>West Side Story</em>, and appears weekly in New York’s most intimate listening rooms.
+        When he isn’t on stage, Kells mentors the next generation of low‑end lovers through private instruction and
+        university clinics.</p>
+      <img src="img/about.jpg" alt="Kells performing on upright bass" />
+    </div>
+  </section>
 
-    <!-- ===== MUSIC ===== -->
-    <section id="music">
-      <h2>Current Projects</h2>
-      <ul>
-        <li><strong>Polite Company</strong> – vintage swing &amp; hot jazz brunches every Sat/Sun, Beekman Hotel</li>
-        <li><strong>Stephane Wrembel Band</strong> – Gypsy jazz guitar wizardry (alumni 2014‑2016)</li>
-        <li><strong>Broadway pits &amp; session work</strong> – subbing on <em>Moulin Rouge!</em> and more</li>
-        <li><strong>Bluegrass outings</strong> – upright slap &amp; harmony vocals with rotating barn‑burners</li>
-      </ul>
-    </section>
+  <!-- GIGS -->
+  <section id="gigs">
+    <h2>Upcoming Gigs</h2>
+    <ul class="gigs-list">
+      <li class="gig"><span class="gig-date">Aug 21, 2025 — 10:30 PM</span> · Pete’s Candy Store · Brooklyn, NY</li>
+      <li class="gig"><span class="gig-date">Aug 24, 2025 — 12–3 PM</span> · Polite Company @ The Beekman Hotel</li>
+      <li class="gig"><span class="gig-date">Nov 2, 2025 — 2 PM</span> · Quintet Concert · Southold, NY</li>
+    </ul>
+  </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section id="gallery">
-      <h2>Photo Gallery</h2>
-      <div class="gallery">
-        <!-- Replace src paths with your own images in /img/ -->
-        <img src="img/photo1.jpg" alt="Kells performing on upright bass" />
-        <img src="img/photo2.jpg" alt="Live gig close‑up" />
-        <img src="img/photo3.jpg" alt="Winery barrel room" />
-        <img src="img/photo4.jpg" alt="Outdoor bluegrass festival" />
-      </div>
-    </section>
+  <!-- MEDIA -->
+  <section id="media">
+    <h2>Listen / Watch</h2>
+    <div style="position:relative;padding-top:56.25%;border-radius:0.75rem;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5)">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+    </div>
+  </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:kells.nollenberger@gmail.com">kells.nollenberger@gmail.com</a></li>
-        <li>Instagram: <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a></li>
-        <li>Bandcamp: <a href="https://bandcamp.com/yourpage" target="_blank" rel="noopener">Latest releases</a></li>
-      </ul>
-    </section>
-  </main>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact & Booking</h2>
+    <div class="contact-card">
+      <p>For bookings, lessons, or collaborations, drop a line at</p>
+      <p><a href="mailto:kells.nollenberger@gmail.com">kells.nollenberger@gmail.com</a></p>
+    </div>
+  </section>
 
-  <footer>
-    © <script>document.write(new Date().getFullYear())</script> Kells Nollenberger. All rights reserved.
-  </footer>
+  <footer style="text-align:center;padding:2rem 1rem;color:var(--text-dim)">© <span id="year"></span> Kells Nollenberger</footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
